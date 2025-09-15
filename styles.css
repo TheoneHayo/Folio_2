@@ -357,10 +357,16 @@ h1, h2, h3 {
     flex-direction: column;
     align-items: center;
   }
+  
+  .diagonal-cut {
+    height: 300px;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+  }
+
 
   .profile-photo {
-    width: 90vw;
-    height: 90vw;
+    width: 80vw;
+    height: 30vw;
     /* Tweak width for mobile */
     padding-top: 75%;
     /* Adjust aspect ratio for mobile */
