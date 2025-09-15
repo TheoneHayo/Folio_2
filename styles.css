@@ -271,64 +271,117 @@ h1, h2, h3 {
 }
 
 /* --- Responsive styles for screens smaller than 1024px (laptops) --- */
+
+/* --- Tablet styles --- */
 @media (max-width: 1023px) {
-    body {
-        font-size: 15px;
-    }
-    
-    .diagonal-cut {
-        height: 500px;
-        clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
-    }
+ body {
+    font-size: 15px;
+  }
 
-    .header-content {
-        flex-direction: column; /* Stack header items on smaller screens */
-        align-items: center;
-        text-align: center;
-    }
+  .diagonal-cut {
+    height: 500px;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+  }
 
-    .header-top {
-        flex-direction: column;
-        align-items: center;
-    }
+  .header-content {
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
 
-    .profile-photo {
-        width: 90vw; /* Responsive width for phone and tablets */
-        height: 75vw; /* Maintains aspect ratio */
-        max-width: 400px; /* Constrains size on tablets */
-        max-height: 350px;
-    }
+  .header-top {
+    flex-direction: row;
+    align-items: center;
+  }
 
-    .name-overlay {
-        bottom: 1%;
-        left: 50%; /* Center the text horizontally */
-        transform: translateX(-50%); /* Adjust for perfect centering */
-        font-size: clamp(1.5em, 6vw, 2em); /* Fluid font size */
-        color: white; /* Changed for better contrast on background */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
+  /* The new wrapper is now responsive */
+  .profile-photo {
+    width: 88vw;
+    max-width: 400px;
+    height: auto;
+    /* Allows the height to adjust automatically */
+    /* Add padding-top to maintain aspect ratio */
+    padding-top: 75%;
+    /* 4:3 aspect ratio (300/400) */
+  }
 
+  .name-overlay {
+    bottom: 5%;
+    /* Adjust for a better position on mobile */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(1.5em, 6vw, 2em);
+    /* Fluid font size */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
 
-    .social-icons {
-        justify-content: center;
-    }
+  .about-me {
+    background-color: #fff;
+    color: var(--dark-gray);
+    padding: 20px;
+    border: 1px solid lightgray;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
 
-    .contact-me {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
+  .social-icons {
+    justify-content: center;
+  }
 
-    .contact-content {
-        flex-direction: row;
-        gap: 50px;
-    }
+  .contact-me {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-    .contact-info {
-        flex: 1;
-    }
-    
-    .contact-photo {
-        max-width: 40%;
-    }
+  .contact-content {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  .contact-info {
+    flex: 1;
+  }
+
+  .contact-photo {
+    max-width: 40%;
+  }
+}
+
+/* --- Mobile styles --- */
+@media (max-width: 700px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-photo {
+    width: 90vw;
+    height: 90vw;
+    /* Tweak width for mobile */
+    padding-top: 75%;
+    /* Adjust aspect ratio for mobile */
+  }
+
+  .name-overlay {
+    font-size: 1.5em;
+    bottom: 3%;
+  }
+
+  .about-me {
+    border-style: none;
+    box-shadow: none;
+    text-align: left;
+  }
+
+  .about-me h2 {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
 }
